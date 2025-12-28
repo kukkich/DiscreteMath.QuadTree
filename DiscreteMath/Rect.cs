@@ -2,6 +2,9 @@
 
 public readonly record struct Rect(Vector2D Min, Vector2D Max)
 {
+    public double Width => Max.X - Min.Y;
+    public double Height => Max.Y - Min.Y;
+
     public bool ContainsPoint(Vector2D p)
     {
         return p.X >= Min.X && p.X <= Max.X &&
